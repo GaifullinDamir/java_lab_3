@@ -4,13 +4,9 @@ import java.io.*;
 import java.util.*;
 
 public class Reader {
-    private static Scanner _sc;
-
-    public Reader(){
-        _sc = new Scanner(System.in);
-    }
 
     public static String[] readConsoleStringArgs(){
+        Scanner _sc = new Scanner(System.in);
         String resultStr;
         resultStr = _sc.nextLine();
         String[] resultStrArr = resultStr.split(" ");
@@ -18,10 +14,10 @@ public class Reader {
         return resultStrArr;
     }
 
-    public static String[] readFileStringArgs(String filePath){
+    public static String[] readFileStringArgs(String inPath){
         String[] resultStrArr;
         try{
-            BufferedReader br = new BufferedReader (new FileReader(filePath));
+            BufferedReader br = new BufferedReader (new FileReader(inPath));
 
             String inStr;
 
