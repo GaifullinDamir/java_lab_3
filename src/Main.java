@@ -8,9 +8,8 @@ public class Main {
 
         try{
             resultArr = _processor.GetSumEvenOddNumbers(inpStr);
-            String resultStr = "Сумма нечетных чисел: " + resultArr[0] + "\n" +
-                    "Сумма четных чисел: " + resultArr[1];
-            Writer.writeFile(resultStr, "out.txt");
+
+            Writer.writeFile(resultStr, "log.txt");
             _processor.PrintOddAndEvenNums(resultArr);
         } catch(Exception e) {
             System.out.println(e);

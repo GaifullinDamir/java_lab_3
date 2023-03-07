@@ -5,10 +5,24 @@ import java.util.*;
 
 public class Reader {
 
+    public static String readConsoleString(){
+        Scanner sc = new Scanner(System.in);
+        String resultStr = "";
+        if(sc.hasNext()){
+            resultStr = sc.next();
+        }
+        return resultStr;
+    }
+
+    public static String readFilePath(){
+        System.out.print("\nВведите путь к файлу:");
+        String path = Reader.readConsoleString();
+        return path;
+    }
     public static String[] readConsoleStringArgs(){
-        Scanner _sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String resultStr;
-        resultStr = _sc.nextLine();
+        resultStr = sc.nextLine();
         String[] resultStrArr = resultStr.split(" ");
 
         return resultStrArr;
@@ -20,10 +34,13 @@ public class Reader {
             BufferedReader br = new BufferedReader (new FileReader(inPath));
 
             String inStr;
-
-            if((inStr = br.readLine()) != null){
-                resultStrArr = inStr.split(" ");
-                return resultStrArr;
+            try{
+                if((inStr = br.readLine()) != null){
+                    resultStrArr = inStr.split(" ");
+                    return resultStrArr;
+                }
+            }finally{
+                br.close();
             }
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
