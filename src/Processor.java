@@ -57,9 +57,4 @@ public class Processor implements IFunc, IConst{
         }
     }
 
-    public void PrintOddAndEvenNums(int[] oddAndEvenArr){
-        System.out.println("Сумма нечетных чисел: " + oddAndEvenArr[0] + "\n" +
-                "Сумма четных чисел: " + oddAndEvenArr[1]);
-    }
-
 }
